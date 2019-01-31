@@ -1,4 +1,4 @@
-# Nova Application Insights Logger
+# Nova Config
 Configuration file loader for Nova framework.
 
 ## Install
