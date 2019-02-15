@@ -13,7 +13,7 @@ const CONFIG_DIR_VAR = 'CONFIG_DIR';
 const CONFIG_SECRET_VAR = 'CONFIG_SECRET';
 
 let settings: Settings;
-let logger: Logger;
+let logger: Logger | undefined;
 let decryptor: Decryptor = defaultDecryptor;
 
 // EXPORTED FUNCTIONS
@@ -80,7 +80,7 @@ export function configure(settings: { logger?: Logger; decryptor?: Decryptor; })
 
 // HELPER FUNCTIONS
 // ================================================================================================
-function getConfigDir(): string {
+function getConfigDir(): string | undefined {
     let basePath = process.cwd();
     let subPath = process.env[CONFIG_DIR_VAR] || 'config';
     let configDir = path.join(basePath, subPath);
@@ -99,7 +99,7 @@ function getConfigDir(): string {
     }
 }
 
-function defaultDecryptor(encrypted: string): object {
+function defaultDecryptor(encrypted: string): any {
     const key = process.env[CONFIG_SECRET_VAR] || settings.env;
     const decipher = crypto.createDecipher('aes-256-cbc', key);
 

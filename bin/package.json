@@ -1,6 +1,6 @@
 {
   "name": "@nova/config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Configuration file loader for Nova framework",
   "keywords": [
     "nova",
@@ -25,6 +25,7 @@
     "strip-json-comments": "2.0.x"
   },
   "devDependencies": {
+    "@types/node": "10.12.x",
     "del": "3.0.x",
     "gulp": "4.0.x"
   }

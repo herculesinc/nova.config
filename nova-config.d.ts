@@ -12,7 +12,7 @@ declare module "@nova/config" {
     }
 
     export interface Decryptor {
-        (encrypted: string): object;
+        (encrypted: string)     : any;
     }
 
     // PUBLIC FUNCTIONS
